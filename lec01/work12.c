@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define POP 9
 
 int getMaxScore(int data[],int count){
     int max = 0;
@@ -13,17 +14,16 @@ int getMaxScore(int data[],int count){
 
 int main(void){
     int n, max;
-    int count = 9;
-    int data[count];
+    int data[POP];
     
-    for (int i = 0; i < count; i++){
+    for (int i = 0; i < POP; i++){
         scanf("%d", &n);
         data[i] = n;
     }
     
-    max = getMaxScore(data,count);
+    max = getMaxScore(data,POP);
 
-    for (int i = 0; i < count; i++){
+    for (int i = 0; i < POP; i++){
         printf("%d ", data[i]);
     }
     printf("\n");
