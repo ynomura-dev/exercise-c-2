@@ -1,15 +1,18 @@
 #include <stdio.h>
 
 int main(void) {
-    int n, m;
+    int n, m, total;
     scanf("%d", &n);
     if (n < 0) return 1;
+    total = n;
     while (1) {
         scanf("%d", &m);
         if (m < 0){
             printf("%d\n", n);
+            printf("%d\n", total);
             break;
             }
         n += m;
+        total *= m;
     }
 }
