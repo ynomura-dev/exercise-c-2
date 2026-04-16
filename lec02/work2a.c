@@ -31,7 +31,7 @@ void push(Point p){
 
 Point pop(void){
     if (isStackEmpty()){
-        printf("空状態でpopしようとしました\n");
+        printf("経路なし\n");
         exit(1);
     }
     return gStack[--gSNum];
