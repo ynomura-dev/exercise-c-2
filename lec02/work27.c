@@ -1,7 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define STACK_SIZE 10
+
+#define STACK_SIZE 1000 
+typedef struct{
+    int x;
+    int y;
+} Point;
+
+Point START = {1, 2};
+Point GOAL  = {8, 9};
+
+int found = 0;
 
 int gStack[STACK_SIZE];
 int gSNum = 0;
@@ -25,7 +35,7 @@ void push(int x){
 
 int pop(void){
     if (isStackEmpty()){
-        printf("正しくない\n");
+        printf("NotRight\n");
         exit(1);
     }
     gSNum--;
@@ -41,15 +51,7 @@ void printStack(void){
     printf(" ]\n");
 }
 
-int assignid(char *kakko){
-    if (strcmp(kakko, "(") == 0) return 1;
-    if (strcmp(kakko, ")") == 0) return -1;
-    if (strcmp(kakko, "[") == 0) return 2;
-    if (strcmp(kakko, "]")  == 0) return -2;
-    if (strcmp(kakko, "{")  == 0) return 3;
-    if (strcmp(kakko, "}")  == 0) return -3;
-    return 0;
-}
+
 
 int main(int argc, char *argv[]){
     int num, tmp;
